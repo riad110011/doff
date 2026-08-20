@@ -1,0 +1,5 @@
+Flask
+playwright
+opencv-python-headless
+numpy
+pytesseract
