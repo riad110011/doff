@@ -1,3 +1,7 @@
+[variables]
+  # এটি Playwright-কে নির্দেশ দেবে ব্রাউজারটি প্রজেক্ট ফোল্ডারে সেভ করতে
+  PLAYWRIGHT_BROWSERS_PATH = "/app/pw-browsers"
+
 [providers]
   nixpkgs = ["python3"]
 
@@ -9,9 +13,8 @@
     "python -m venv /opt/venv",
     ". /opt/venv/bin/activate",
     "pip install -r requirements.txt",
-    "playwright install chromium --with-deps"
+    "python -m playwright install chromium --with-deps"
   ]
 
 [phases.start]
   cmd = ". /opt/venv/bin/activate && python app.py"
-  
