@@ -1,0 +1,17 @@
+[providers]
+  nixpkgs = ["python3"]
+
+[phases.setup]
+  aptPkgs = ["tesseract-ocr"]
+
+[phases.install]
+  cmds = [
+    "python -m venv /opt/venv",
+    ". /opt/venv/bin/activate",
+    "pip install -r requirements.txt",
+    "playwright install chromium --with-deps"
+  ]
+
+[phases.start]
+  cmd = ". /opt/venv/bin/activate && python app.py"
+  
